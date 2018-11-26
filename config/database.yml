@@ -15,15 +15,27 @@
 # gem 'pg'
 #
 default: &default
+
+  # adapter: mysql2
+  # encoding: utf8
+  # host: localhost
+  # port: 3306
+  # username: root
+  # password: root
+
   adapter: postgresql
   encoding: unicode
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  database: msf
+  username: msf
+  password: msf
+  port: 5432
   pool: 5
+
 
 development:
   <<: *default
-  database: rails_calendar_development
+  database: calender_development
+
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -79,7 +91,5 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: rails_calendar_production
-  username: rails_calendar
-  password: <%= ENV['RAILS_CALENDAR_DATABASE_PASSWORD'] %>
+  url: <%= ENV["SOME_OTHER_URL"] %>
+  pool: 15
