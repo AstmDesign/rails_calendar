@@ -18,6 +18,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
+  config.omniauth :google_oauth2, "126593147370-5aj6opgo5hkflpvuhnrj574pv5e7rel9.apps.googleusercontent.com", "kJ--doCUbTK-qW6vH1GoYo70", { }
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
   config.omniauth :facebook, "367062153839159", "eaa97d8fa0575e25f93818ee76b0aa27", callback_url: "https://fus-temp.herokuapp.com/", scope: 'public_profile,email'
   # https://fus-temp.herokuapp.com/users/auth/facebook/callback
