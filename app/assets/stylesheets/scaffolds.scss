@@ -66,8 +66,41 @@ div {
     color: #fff;
   }
 
-  ul li {
-    font-size: 12px;
-    list-style: square;
+  ul{
+    li {
+      font-size: 12px;
+      list-style: square;
+    }
+  }
+}
+
+table{
+  width: 100%;
+  border: solid 1px #cccccc;
+
+  thead {
+    background-color: #cccccc;
+    font-weight: bold;
+  }
+
+  tbody {
+    tr {
+      td {
+        text-align: center;
+        border: solid 1px #cccccc;
+      }
+    }
+  }
+}
+
+ul {
+  li {
+    float: left;
+    margin: 0px 0px 10px 0px;
+    width: 100%;
+
+    a{
+      text-decoration: none;
+    }
   }
 }
