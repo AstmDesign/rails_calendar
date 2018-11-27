@@ -25,16 +25,16 @@ default: &default
 
   adapter: postgresql
   encoding: unicode
-  database: msf
-  username: msf
-  password: msf
+  host: localhost
   port: 5432
-  pool: 5
-
 
 development:
   <<: *default
   database: calender_development
+
+  username: astm
+  password:
+  pool: 5
 
 
   # The specified database role being used to connect to postgres.
@@ -92,4 +92,9 @@ test:
 #
 production:
   url: <%= ENV["SOME_OTHER_URL"] %>
+
+  database: msf
+  username: msf
+  password: msf
+
   pool: 15
