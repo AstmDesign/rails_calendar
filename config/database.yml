@@ -32,9 +32,9 @@ development:
   <<: *default
   database: rails_temp_development
 
-  username: astm
-  password:
-  pool: 5
+  # username: astm
+  # password:
+  # pool: 5
 
 
   # The specified database role being used to connect to postgres.

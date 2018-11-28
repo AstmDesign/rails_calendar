@@ -8,7 +8,7 @@
       <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %>
     <% else %>
       <%= current_user[:name] %>
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+          <%= link_to "Sign out", users_sign_out_path, :method => :delete %>
     <% end %>
   </li>
   <li>
