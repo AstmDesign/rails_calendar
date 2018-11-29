@@ -27,10 +27,12 @@ class User < ActiveRecord::Base
     data = access_token.info
     user = User.where(:email => data["email"]).first
   
-        
+          
+          binding.pry
+          
     unless user
-      pass = Devise.friendly_token[0,20]
-      user = User.create(name: data["name"], email: data["email"])
+      @pass = Devise.friendly_token[0,20]
+      user = User.create(name: data["name"], email: data["email"], image: data["image"])
     end
     user
   end
