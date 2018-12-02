@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     delete "/users/sign_out" => "devise/sessions#destroy"
+    get "/users/sign_in"  => "devise/sessions#new"
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

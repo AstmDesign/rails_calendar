@@ -1,14 +1,16 @@
-
 <h1>Its Just Rails testing app</h1>
 
 <ul>
-    <% unless current_user %>
-     <li> <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %></li>
-     <li> <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %></li>
-    <% else %>
-     <li> <%= current_user[:name] %></li>
-         <li> <%= link_to "Sign out", users_sign_out_path, :method => :delete %></li>
-    <% end %>
+  <% unless current_user %>
+    <li> <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %></li>
+    <li> <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %></li>
+    <li> <%= link_to'Sign in with Device', users_sign_in_path() %></li>
+  <% else %>
+    <li>
+      <b>Welcome <%= current_user[:name] %></b>
+    </li>
+    <li> <%= link_to "Sign out", users_sign_out_path, :method => :delete %></li>
+  <% end %>
 
   <li>
     <%=link_to "Users page", users_path %>
