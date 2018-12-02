@@ -20,7 +20,7 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.omniauth :google_oauth2, "126593147370-55rl6cqglgr37c1gto42ascbijuc6t0s.apps.googleusercontent.com", "AwyAXup71JbVVm26kzCzi4ZY", { }
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
-  config.omniauth :facebook, "367062153839159", "eaa97d8fa0575e25f93818ee76b0aa27", callback_url: "https://fus-temp.herokuapp.com/users/auth/facebook/", scope: 'public_profile,email'
+  config.omniauth :facebook, "367062153839159", "eaa97d8fa0575e25f93818ee76b0aa27", callback_url: "https://dd500a10.ngrok.io/users/auth/facebook", scope: 'public_profile,email'
   # https://fus-temp.herokuapp.com/users/auth/facebook/callback
 
   # Configure the class responsible to send e-mails.
