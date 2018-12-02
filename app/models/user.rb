@@ -2,17 +2,15 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :omniauthable, :omniauth_providers => [:facebook, :google_oauth2]
+  attr_accessor :password
+
   # Scopes
   default_scope { order(id: :desc) }
 
-
-  # def self.new_with_session(params, session)
-  #   super.tap do |user|
-  #     if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
-  #       user.email = data["email"] if user.email.blank?
-  #     end
-  #   end
-  # end
+  # validation
+  # validates :name, :email, :password, presence: true, allow_blank: false
+  # validates :name, :email, uniqueness: true
+  # validates :password, length: { minimum: 8 }
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -23,17 +21,5 @@ class User < ActiveRecord::Base
       user.image = auth.info.image
     end
   end
-
-
-  # def self.from_omniauth(access_token)
-  #   data = access_token.info
-  #   user = User.where(:email => data["email"]).first
-
-  #   unless user
-  #     @pass = Devise.friendly_token[0,20]
-  #     user = User.create(name: data["name"], email: data["email"], image: data["image"])
-  #   end
-  #   user
-  # end
 
 end
