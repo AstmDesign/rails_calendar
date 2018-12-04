@@ -4,6 +4,8 @@
   <% unless current_user %>
     <li> <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %></li>
     <li> <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %></li>
+    <li> <%= link_to "Sign in with Twitter", user_twitter_omniauth_authorize_path %></li>
+    <li> <%= link_to "Sign in with instagram", user_instagram_omniauth_authorize_path %></li>
     <li> <%= link_to'Sign in with Device', users_sign_in_path() %></li>
   <% else %>
     <li>

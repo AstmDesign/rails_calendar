@@ -18,9 +18,12 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
+  config.omniauth :instagram,  "d5c90e80cdab44e99e3fbc3722e31a87",   "6fd8e0d68b64478284fc84a91bfe3c5e", callback_url: "http://2localhost:3000/users/auth/instagram"
+  config.omniauth :twitter, "pBokRgfXL5F6Xw8QmL5hrrxcl", "n36XnK9z4TguZP2T0ugUlgW9vUMyOvy3XeUhmecTc27S6aFIy8"
   config.omniauth :google_oauth2, "126593147370-55rl6cqglgr37c1gto42ascbijuc6t0s.apps.googleusercontent.com", "AwyAXup71JbVVm26kzCzi4ZY", { }
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
-  config.omniauth :facebook, "367062153839159", "eaa97d8fa0575e25f93818ee76b0aa27", callback_url: "https://dd500a10.ngrok.io/users/auth/facebook", scope: 'public_profile,email'
+  config.omniauth :facebook, "367062153839159", "eaa97d8fa0575e25f93818ee76b0aa27", callback_url: "https://2d358535.ngrok.io/users/auth/facebook"
+
   # https://fus-temp.herokuapp.com/users/auth/facebook/callback
 
   # Configure the class responsible to send e-mails.
