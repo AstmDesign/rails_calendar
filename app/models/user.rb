@@ -47,7 +47,6 @@ class User < ActiveRecord::Base
       email = auth.info.nickname if auth.provider == 'twitter'
       email = auth.info.email if auth.provider == 'google_oauth2'
       email = "" if auth.provider == 'instagram'
-      binding.pry
 
       user = User.create(
         uid:      auth.uid,
